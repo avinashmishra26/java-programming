@@ -1,4 +1,4 @@
-package cracking.coding.interview.dynamicProgram;
+package cracking.coding.interview.dynamicProgram.array;
 
 /**
  * Created by avinashkumarmishra on 25/10/21.

@@ -11,6 +11,7 @@ public class TopologicalSort {
 
 
     public static void main(String[] args) {
+
         int vertex = 7;
 
         ArrayList<Edge>[] graph = new ArrayList[vertex];

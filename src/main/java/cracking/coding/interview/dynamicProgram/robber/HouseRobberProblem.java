@@ -1,4 +1,4 @@
-package cracking.coding.interview.dynamicProgram;
+package cracking.coding.interview.dynamicProgram.robber;
 
 /**
  * Created by avinashkumarmishra on 12/10/21.
