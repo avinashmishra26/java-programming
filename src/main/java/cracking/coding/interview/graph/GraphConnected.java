@@ -6,6 +6,10 @@ import java.util.List;
 
 /**
  * Created by avinashkumarmishra on 01/11/21.
+ * 2022
+ *
+ * isGraphConnected Problem
+ *
  */
 public class GraphConnected {
 
@@ -45,6 +49,28 @@ public class GraphConnected {
 
         System.out.println(connectedComponent.size() == 1);
 
+        //One more approach
+        visited = new boolean[graph.length];
+        dfs(graph, 0, visited);
+
+        for(boolean v: visited){
+            if(v == false){
+                System.out.println(false);
+                return;
+            }
+        }
+
+    }
+
+    private static void dfs(ArrayList<Edge>[] graph, int currentNode, boolean[] visited) {
+        visited[currentNode] = true;
+
+        for(Edge e : graph[currentNode]) {
+            int nbr = e.dest;
+            if(visited[nbr] == false){
+                dfs(graph, nbr, visited);
+            }
+        }
     }
 
     public static void addConnectedComponent(ArrayList<Edge>[] graph, int currentNode, boolean[] visited, List<Integer> component) {

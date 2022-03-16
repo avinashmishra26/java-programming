@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Created by avinashkumarmishra on 27/09/21.
- *
+ * 2022
  * In an American football game, a play can lead to 2 points(safety), 3 points(field goal),
  * or 7 points (touchdown, assuming the extra point). Many different combinations of
  * 2, 3, and 7 point plays can make up a final score. For example, four combinations of
@@ -39,6 +39,8 @@ public class Problem1 {
 
         System.out.println(count(12));
 
+        System.out.println("2022 goal GOOGLE "+getScoreCombinations(new int[]{7,3, 2}, 12));
+
     }
 
     static int getCount(int[] values, int total) {
@@ -53,6 +55,32 @@ public class Problem1 {
         }
         return dp[total];
     }
+
+    static int getScoreCombinations(int[] n, int total) {
+
+        int[][] dp = new int[n.length][total+1];
+
+        for(int i = 0; i < dp.length; i++) {
+            for(int j = 0; j < dp[0].length; j++) {
+                int cnt = 0;
+                if( j == 0 ){
+                    dp[i][j] = 1;
+                } else if ( i == 0) {
+                    if(j >= n[i]){
+                        dp[i][j] += dp[i][j-n[i]];
+                    }
+                } else {
+                    if(j >= n[i]){
+                        cnt = dp[i][j-n[i]];
+                    }
+                    dp[i][j] = dp[i-1][j] + cnt;
+                }
+            }
+        }
+        return dp[n.length-1][total];
+    }
+
+
 
     static int count(int n)
     {

@@ -10,7 +10,7 @@ import java.util.List;
  * Here we have items ( weight, value)
  * Item(2,15), Item(5,14), Item(1,10), Item(3,45), Item(4,30)
  * and the bag capacity is 7
- *
+ * 2022
  */
 public class problem6UnboundedKnapsack {
 
@@ -31,16 +31,13 @@ public class problem6UnboundedKnapsack {
     static int optimalStratergyUnboundedKnapsack(List<Item> items, int capacity) {
 
         int[] dp = new int[capacity+1];
-        int temp = Integer.MIN_VALUE;
 
         for ( int i = 1 ; i < dp.length; i++) {
             for(Item item : items) {
                 if(item.weight <= i) {
-                    temp = item.value + dp[i - item.weight];
+                    dp[i] = Math.max(dp[i], item.value + dp[i - item.weight]);
                 }
-                if (temp > dp[i]) {
-                    dp[i] = temp;
-                }
+
             }
         }
         return dp[capacity];

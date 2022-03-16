@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by avinashkumarmishra on 31/10/21.
+ * Created by avinashkumarmishra on 31/10/21
+ * 2022.
  *
  7
  8
@@ -28,6 +29,7 @@ public class HasPath {
     public static void main(String[] args)throws IOException {
 
         BufferedReader br  = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Input Required");
 
         int vtcs = Integer.parseInt(br.readLine());
 

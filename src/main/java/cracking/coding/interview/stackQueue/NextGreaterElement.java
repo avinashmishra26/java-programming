@@ -8,7 +8,12 @@ import java.util.LinkedList;
  * Next Greater Element
  * Input : {10,9,5,7,6}          and   {1,5,2,3,6}
  * output : {-1, -1, 7, -1, -1}  and   {5, 6, 3, 6, -1}
+ *
+ * 2022
+ *
  */
+
+
 public class NextGreaterElement {
 
     public static void main(String[] args) {
@@ -37,16 +42,12 @@ public class NextGreaterElement {
 
 
         Deque<Integer> deque = new LinkedList<>();
-        deque.addFirst(0);
 
 
-        for(int i = 1; i < n.length ; i++) {
+        for(int i = 0; i < n.length ; i++) {
 
-            int ele = n[i];
-
-            while(!deque.isEmpty() && n[deque.peekFirst()] < ele ){
-                int idx = deque.removeFirst();
-                n[idx] = ele;
+            while(!deque.isEmpty() && n[deque.peekFirst()] < n[i] ){
+                n[deque.removeFirst()] = n[i];
             }
 
             deque.addFirst(i);
@@ -66,12 +67,7 @@ public class NextGreaterElement {
 
 
     static void backwardMove(int[] n) {
-        System.out.println("\nbackwardMove");
-        //initial
-        System.out.println("\ninitial");
-        for(int i = 0; i < n.length ; i++) {
-            System.out.print(n[i]+ " ");
-        }
+        System.out.print("\nbackwardMove ::");
 
         Deque<Integer> deque = new LinkedList<>();
         deque.addFirst(n[n.length-1]);
@@ -93,7 +89,7 @@ public class NextGreaterElement {
         }
 
         //Result
-        System.out.println("\nResult");
+        System.out.print("Result : ");
         for(int i = 0; i < n.length ; i++) {
             System.out.print(n[i]+ " ");
         }

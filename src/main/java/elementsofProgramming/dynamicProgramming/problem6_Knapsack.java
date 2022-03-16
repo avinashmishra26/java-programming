@@ -12,6 +12,7 @@ import java.util.List;
  * Item(2,15), Item(5,14), Item(1,10), Item(3,45), Item(4,30)
  * and the bag capacity is 7
  * Max Value generate
+ * 2022
  */
 public class problem6_Knapsack {
 

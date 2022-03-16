@@ -5,7 +5,8 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 /**
- * Created by avinashkumarmishra on 03/11/21.
+ * Created by avinashkumarMishra on 03/11/21.
+ * 2022
 
  src  nbr
  0 1
@@ -16,7 +17,7 @@ import java.util.LinkedList;
  4 5
  4 6
  5 6
- 
+
  */
 public class BFS {
     
@@ -45,7 +46,7 @@ public class BFS {
         ArrayList<Edge>[] graph = new ArrayList[7];
         
         for(int i = 0; i < 7; i++) {
-            graph[i] = new ArrayList<>();
+            graph[i] = new ArrayList<Edge>();
         }
 
         graph[0].add(new Edge(0, 1));

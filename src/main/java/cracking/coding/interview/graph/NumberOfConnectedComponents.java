@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Created by avinashkumarmishra on 01/11/21.
+ * 2022
  *
  */
 public class NumberOfConnectedComponents {
@@ -27,6 +28,9 @@ public class NumberOfConnectedComponents {
         graph[2].add(new Edge(2, 3, 0));
         graph[3].add(new Edge(3, 2, 0));
 
+        //graph[3].add(new Edge(3, 4, 0));
+        //graph[4].add(new Edge(4, 3, 0));
+
         graph[4].add(new Edge(4, 5, 0));
         graph[4].add(new Edge(4, 6, 0));
         graph[5].add(new Edge(5, 4, 0));
@@ -41,7 +45,7 @@ public class NumberOfConnectedComponents {
         for(int i = 0; i < graph.length; i++) {
             if(visited[i] == false) {
                 List<Integer> component = new ArrayList<>();
-                addConnectedComponent(graph, i, visited, component);
+                getConnectedComponents(graph, i, visited, component);
                 connectedComponent.add(component);
             }
         }
@@ -51,19 +55,15 @@ public class NumberOfConnectedComponents {
         }
     }
 
-    private static void addConnectedComponent(ArrayList<Edge>[] graph, int currentNode, boolean[] visited, List<Integer> component) {
+    private static void getConnectedComponents(ArrayList<Edge>[] graph, int curr, boolean[] visited, List<Integer> component) {
 
-        if(visited[currentNode]) {
-            return;
+        visited[curr] = true;
+        component.add(curr);
+
+        for(Edge e : graph[curr]) {
+            if(visited[e.dest] == false){
+                getConnectedComponents(graph, e.dest, visited, component);
+            }
         }
-
-        visited[currentNode] = true;
-        component.add(currentNode);
-
-        for(Edge e : graph[currentNode]) {
-            addConnectedComponent(graph, e.dest, visited, component);
-        }
-
-
     }
 }

@@ -8,15 +8,19 @@ package elementsofProgramming.dynamicProgramming;
  *  program, this program iteratively fills in the cache in a bottom-up fashion, which
  *  allowsit to reuse cache storage to reduce the space complexity of the cache.
  *
+ *  2022
  */
 public class FibonacciWithoutDP {
 
     public static void main(String[] args) {
 
-        System.out.print(fibonacci(10));
+        System.out.println(fibonacci(10));
+
+        System.out.println(fibRecurrsive(9));
 
     }
 
+    //good approach
     public static int fibonacci(int n) {
 
         int a = 0, b = 1, c = 0;
@@ -32,5 +36,13 @@ public class FibonacciWithoutDP {
         }
 
         return c;
+    }
+
+    //recursive bad approach
+    private static int fibRecurrsive(int n) {
+        if(n <= 1) return n;
+        else {
+            return fibRecurrsive(n - 1) + fibRecurrsive(n - 2);
+        }
     }
 }
