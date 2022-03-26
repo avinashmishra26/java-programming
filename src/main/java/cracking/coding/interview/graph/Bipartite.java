@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Created by avinashkumarmishra on 04/11/21.
+ *  Created by avinashkumarmishra on 04/11/21.
+ *  2022
  */
+
 public class Bipartite {
     public static void main(String[] args)throws IOException {
 
@@ -44,11 +46,30 @@ public class Bipartite {
             if(visited[i]) continue;
 
             if (!isBipartite(graph, i, test, visited)){
-                System.out.print("It is Not bipartite");
-                return;
+                System.out.println("It is Not bipartite");
+                //return;
             }
         }
+        //System.out.println("u are safe");
+
+        System.out.println("Method 2:");
+
+
+        int[] visitArr = new int[graph.length];
+        Arrays.fill(visitArr, -1);
+
+        for(int i = 0; i < graph.length; i++){
+            if(visitArr[i] == -1){
+                boolean res = isBipartiteMethod(graph, i, visitArr);
+                if(res == false) {
+                    System.out.print("It is Not bipartite");
+                    return;
+                }
+            }
+        }
+
         System.out.print("u are safe");
+
     }
 
     private static boolean isBipartite(ArrayList<Edge>[] graph, int idx, Map<Integer, List<Integer>> test, boolean[] visited) {
@@ -80,5 +101,45 @@ public class Bipartite {
             in++;
         }
         return true;
+    }
+
+    // Second method
+    private static boolean isBipartiteMethod(ArrayList<Edge>[] graph, int curr, int[] visited) {
+
+        ArrayDeque<PairLevel> d = new ArrayDeque<>();
+        d.add(new PairLevel(curr, curr+"", 0));
+
+        while(!d.isEmpty()) {
+
+            PairLevel rem = d.remove();
+
+            if(visited[rem.v] != -1){
+                if(rem.level != visited[rem.v]) {
+                    return false;
+                }
+            }
+
+            visited[rem.v] = rem.level;
+
+            for(Edge e : graph[rem.v]){
+                if(visited[e.dest] == -1){
+                    d.add(new PairLevel(e.dest, rem.psf + e.dest, rem.level+1));
+                }
+            }
+
+        }
+        return true;
+    }
+
+    private static class PairLevel {
+        int v;
+        String psf;
+        int level;
+
+        PairLevel(int v, String psf, int level) {
+            this.v = v;
+            this.psf = psf;
+            this.level = level;
+        }
     }
 }

@@ -14,9 +14,15 @@ public class LevelOrderTraversal {
 
         GenericTree root = GenericTreeConstruction.constructTree(arr);
 
+        System.out.println("1st approach");
         levelOrderTraversal(root);
 
+        System.out.println("\n2rd approach");
         level2(root);
+
+        System.out.println("\n3rd approach");
+        //one more way
+        levelOrder(root);
 
     }
 
@@ -39,6 +45,7 @@ public class LevelOrderTraversal {
         }
     }
 
+    // with 2 Queues
     static private void level2(GenericTree node) {
 
         Queue<GenericTree> parent = new ArrayDeque<>();
@@ -58,6 +65,35 @@ public class LevelOrderTraversal {
             }
             System.out.println();
             parent = child;
+        }
+
+    }
+
+    //one more way
+    private static void levelOrder(GenericTree node) {
+
+        GenericTree marker = new GenericTree(-1);
+
+        ArrayDeque<GenericTree> mq = new ArrayDeque<>();
+        mq.add(node);
+        mq.add(marker);
+
+
+        while(!mq.isEmpty()) {
+
+            GenericTree g = mq.poll();
+            if(g.data != -1) {
+                System.out.print(g.data + " ");
+                for(int i = 0; i <g.children.size(); i++) {
+                    mq.add(g.children.get(i));
+                }
+            } else {
+                if(mq.size() > 0) {
+                    System.out.println();
+                    mq.add(marker);
+                }
+            }
+
         }
 
     }

@@ -11,9 +11,15 @@ public class ClimbStairs {
     public static void main(String[] args) {
         List<String> res = new ArrayList<>();
 
-        climbStairsPath(5, new int[]{1,2}, "", res);
+        climbStairsPath(4, new int[]{1,2,3}, "", res);
 
-        res.forEach(e -> System.out.println(e));
+        System.out.print("[");
+        res.forEach(e -> System.out.print(e + ", "));
+        System.out.println("]");
+
+        System.out.println("New method");
+
+        System.out.println(getClimbStairsPath(4));
 
     }
 
@@ -30,5 +36,27 @@ public class ClimbStairs {
         for(int option : options) {
             climbStairsPath(stair-option, options, start+"->"+option, res);
         }
+    }
+
+    private static ArrayList<String> getClimbStairsPath(int n) {
+        if(n == 0) {
+            ArrayList<String> res = new ArrayList<>();
+            res.add("");
+            return res;
+        } else if(n < 0) {
+            return new ArrayList<>();
+        }
+        ArrayList<String> res = new ArrayList<>();
+
+        for(String s : getClimbStairsPath(n-1))
+            res.add("->1"+s);
+
+        for(String s : getClimbStairsPath(n-2))
+            res.add("->2"+s);
+
+        for(String s : getClimbStairsPath(n-3))
+            res.add("->3"+s);
+
+        return res;
     }
 }

@@ -1,4 +1,4 @@
-package cracking.coding.interview.backtracking;
+package cracking.coding.interview.backtracking.basic;
 
 /**
  * Created by avinashkumarmishra on 14/02/22.

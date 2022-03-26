@@ -4,6 +4,7 @@ import java.util.*;
 
 /**
  * Created by avinashkumarmishra on 04/11/21.
+ * 2022
  */
 public class DijikstraAlgo {
 
@@ -74,7 +75,7 @@ public class DijikstraAlgo {
 
             for(Edge e : graph[p.vertex]) {
                 if(!visited[e.dest]) {
-                    deque.add(new Pair(e.dest, e.dest+"", p.totalWeight + e.weight));
+                    deque.add(new Pair(e.dest, p.psf + e.dest, p.totalWeight + e.weight));
                 }
             }
         }

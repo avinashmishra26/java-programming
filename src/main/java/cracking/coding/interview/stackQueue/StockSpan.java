@@ -1,22 +1,24 @@
 package cracking.coding.interview.stackQueue;
 
-import java.util.*;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
- * Created by avinashkumarmishra on 19/10/21.
+ * Created by avinashkumarmishra on 03/11/21.
+ * 2022
+ *
+ * PrevGreaterElement using idx method
  */
-public class PrevGreaterElement {
+
+public class StockSpan {
+
+
 
     public static void main(String[] args) {
 
-        int[] n = {6,8,4,3,5,7,1,2};
-        //initial
-        System.out.println("initial");
-        for (int i = 0; i < n.length; i++) {
-            System.out.print(n[i] + " ");
-        }
+        int[] n = {6, 8, 4, 3, 5, 7, 1, 2};
 
-        prevGreaterElement(n);
+        prevGreaterElementVariant(n);
         System.out.println("\nResult");
         for (int i = 0; i < n.length; i++) {
             System.out.print(n[i] + " ");
@@ -25,21 +27,23 @@ public class PrevGreaterElement {
     }
 
     //Using Idx,so backward traversal
-    private static void prevGreaterElement(int[] arr) {
+    private static void prevGreaterElementVariant(int[] arr) {
 
         Deque<Integer> deque = new LinkedList<>();
 
         for(int i = arr.length-1; i >= 0; i--) {
 
             while(!deque.isEmpty() && arr[deque.peekFirst()] < arr[i]) {
-                arr[deque.removeFirst()] = arr[i];
+                int idx = deque.removeFirst();
+                arr[idx] = Math.abs(i-idx);
             }
 
             deque.addFirst(i);
         }
 
         while(deque.isEmpty() == false) {
-            arr[deque.removeFirst()] = -1;
+            int idx = deque.removeFirst();
+            arr[idx] = idx+1;
 
         }
     }

@@ -1,7 +1,15 @@
-package cracking.coding.interview;
+package cracking.coding.interview.dynamicProgram.array;
 
 /**
  * Created by avinashkumarmishra on 16/10/21.
+ * 2022
+ *
+ * Decode ways where
+ * 1-a
+ * .....
+ * 26-z
+ *
+ *
  */
 public class NumberOfEncoding {
 

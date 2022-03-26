@@ -1,4 +1,4 @@
-package cracking.coding.interview;
+package cracking.coding.interview.dynamicProgram;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Created by avinashkumarmishra on 16/10/21.
  * Count Binary Strings | Binary Strings with no consecutive 0's | Dynamic Programming
+ * 2022
  */
 public class BinaryStringsWithNoConsecutiveZeros {
 

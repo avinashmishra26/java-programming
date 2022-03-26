@@ -44,7 +44,7 @@ public class GenericTreeConstruction {
         return root;
     }
 
-    private static void display(GenericTree node) {
+    public static void display(GenericTree node) {
 
         if(node == null) return;
 
