@@ -2,6 +2,7 @@ package util;
 
 /**
  * Created by avinashkumarmishra on 25/10/21.
+ * 2022
  */
 public class KadaneAlgo {
 
@@ -31,22 +32,4 @@ public class KadaneAlgo {
         return maxSoFar;
     }
 
-    public static int maxSubarraySumCirCular(int[] nums) {
-        int maxCurrent = 0, maxSoFar = Integer.MIN_VALUE;
-        int i = 0;
-        for(int j = 0; j < 2*nums.length; j++) {
-            i = j % nums.length;
-
-            maxCurrent += nums[i];
-
-            if(maxCurrent < nums[i]) {
-                maxCurrent = nums[i];
-            }
-
-            if (maxSoFar < maxCurrent) {
-                maxSoFar = maxCurrent;
-            }
-        }
-        return maxSoFar;
-    }
 }

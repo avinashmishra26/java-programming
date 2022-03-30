@@ -27,7 +27,7 @@ public class NodeToRootPath {
             System.out.print(result.get(i) + "  -> ");
 
     }
-    private static void nodeToRootPath(GenericTree node, int ele, ArrayList<Integer> result) {
+    public static void nodeToRootPath(GenericTree node, int ele, ArrayList<Integer> result) {
 
         if(node.data == ele) {
             result.add(node.data);

@@ -3,6 +3,7 @@ package elementsofProgramming.recursion;
 /**
  * Created by avinashkumarmishra on 18/10/21.
  * Here Queens are different for 4X4 board (Q1, Q2, Q3, Q4) but each can attack each other with the same rule
+ * 2022
  */
 public class Problem2_NQueenPermutation {
 

@@ -3,6 +3,7 @@ package elementsofProgramming.recursion;
 /**
  * Created by avinashkumarmishra on 13/10/21.
  * Here all queens are same for 4X4 board (Q, Q, Q, Q)
+ * 2022
  */
 public class Problem2_NQueenSafe {
     public static void main(String[] args) {
