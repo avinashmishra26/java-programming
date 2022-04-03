@@ -1,7 +1,8 @@
-package cracking.coding.interview;
+package cracking.coding.interview.dynamicProgram.array;
 
 /**
  * Created by avinashkumarmishra on 22/10/21.
+ * 2022
  */
 public class HousePaint {
 
@@ -30,4 +31,6 @@ public class HousePaint {
 
         return Math.min(dp[paintCost.length - 1][0], Math.min(dp[paintCost.length - 1][1], dp[paintCost.length - 1][2]));
     }
+
+
 }

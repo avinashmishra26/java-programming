@@ -2,11 +2,13 @@ package cracking.coding.interview.dynamicProgram.differentType;
 
 /**
  * Created by avinashkumarmishra on 13/11/21.
+ * 2022
  */
+
 public class MaxNonAdjacentSum {
 
     public static void main(String[] args) {
-        System.out.print(maxSumofNonAdjacent(new int[]{30, 4, 2}));
+        System.out.print(maxSumofNonAdjacent(new int[]{5,10,10, 100, 5, 6}));
 
     }
 
@@ -25,4 +27,5 @@ public class MaxNonAdjacentSum {
         return Math.max(include, exclude);
 
     }
+
 }
