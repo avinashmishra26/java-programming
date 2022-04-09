@@ -1,4 +1,4 @@
-package amazon;
+package company;
 
 import java.util.*;
 
@@ -22,6 +22,8 @@ public class Promlem1 {
             this.start = start;
             this.end = end;
         }
+
+        @Override
         public int compareTo(Time other){
             if(this.start - other.start != 0)
                 return this.start - other.start;

@@ -1,4 +1,4 @@
-package amazon;
+package company;
 
 /**
  * Created by avinashkumarmishra on 18/11/21.

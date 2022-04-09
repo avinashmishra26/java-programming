@@ -1,15 +1,14 @@
-package cracking.coding.interview.stackQueue;
+package cracking.coding.interview.stackQueue.meetingRooms;
 
 import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 /**
  * Created by avinashkumarmishra on 02/04/22.
  *
- * MergeOverlappingInterval
+ * MergeOverlappingInterval : Use stack
  *
- * Can also use using stack
+ *
+ * https://leetcode.com/problems/merge-intervals/
  *
  */
 
@@ -24,7 +23,7 @@ public class MergeOverlappingInterval {
                 new MeetingInterval(25, 27)));
 
 
-        mergeIntervals(lst).stream().forEach(System.out :: println);
+        int[][] res = mergeIntervals(new int[][]{ {1,8},{5,12},{14,19},{22,28},{25,27}});
 
         System.out.print("\n New");
         Stack<MeetingInterval> m = getMergeInterval(lst);
@@ -58,25 +57,50 @@ public class MergeOverlappingInterval {
         }
     }
 
-    private static List<MeetingInterval> mergeIntervals(ArrayList<MeetingInterval> meetings) {
+    private static int[][] mergeIntervals(int[][] intervals) {
 
-        Collections.sort(meetings);
 
-        for(int i = meetings.size() - 1; i > 0; i-- ) {
+        Arrays.sort(intervals, (a,b) -> Integer.compare(a[0], b[0]));
 
-            if(meetings.get(i).start <= meetings.get(i-1).end) {
-                MeetingInterval toBRemoved =  meetings.get(i);
 
-                if(meetings.get(i).end < toBRemoved.end) {
-                    meetings.set(i-1, new MeetingInterval(meetings.get(i-1).start, toBRemoved.end));
+        Stack<int[]> stk = new Stack<int[]>();
+
+        for(int[] interval : intervals) {
+
+            int[] curr = interval;
+
+            if(stk.size() > 0) {
+
+                int[] prev = stk.peek();
+
+                if(curr[0] <= prev[1]) {
+                    prev = stk.pop();
+
+                    stk.push(new int[]{prev[0], Math.max(curr[1], prev[1])});
+                } else {
+                    stk.push(curr);
                 }
-                meetings.remove(toBRemoved);
+
+
+            } else {
+                stk.push(curr);
             }
+
+
+
         }
-        return meetings;
+
+        intervals = new int[stk.size()][2];
+
+        for(int i = intervals.length-1; i >= 0; i--) {
+            int[] t = stk.pop();
+            intervals[i][0] = t[0];
+            intervals[i][1] = t[1];
+        }
+        return intervals;
     }
 
-    //using stack but it has more space complexity
+    //using stack and it has space complexity of o(n)
     private static Stack<MeetingInterval> getMergeInterval(ArrayList<MeetingInterval> meetings){
 
         Collections.sort(meetings);

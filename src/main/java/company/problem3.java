@@ -1,4 +1,4 @@
-package amazon;
+package company;
 
 import java.util.*;
 
