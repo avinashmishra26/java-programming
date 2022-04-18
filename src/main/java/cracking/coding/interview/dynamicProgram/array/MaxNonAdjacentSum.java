@@ -1,4 +1,4 @@
-package cracking.coding.interview.dynamicProgram.differentType;
+package cracking.coding.interview.dynamicProgram.array;
 
 /**
  * Created by avinashkumarmishra on 13/11/21.
