@@ -7,6 +7,8 @@ import java.util.List;
 /**
  * Created by avinashkumarmishra on 07/11/21.
  * Compute the largest rectangle under the skyline
+ *
+ * https://leetcode.com/problems/largest-rectangle-in-histogram/
  */
 public class Problem8 {
 

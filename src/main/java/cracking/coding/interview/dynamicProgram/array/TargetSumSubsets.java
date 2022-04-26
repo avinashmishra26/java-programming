@@ -8,7 +8,6 @@ public class TargetSumSubsets {
 
     public static void main(String[] args) {
 
-        ;
         System.out.print(getTargetSumSubsets(new int[]{4,2,7,1,3}, 10));
 
     }

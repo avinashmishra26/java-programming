@@ -15,8 +15,8 @@ public class HousePaint {
         System.out.print(getMinimumCost(paintCost));
     }
 
-    private static int getMinimumCost(int[][] paintCost){
-        int[][] dp = new int[paintCost.length][3];
+    private static long getMinimumCost(int[][] paintCost){
+        long[][] dp = new long[paintCost.length][3];
 
 
         dp[0][0] = paintCost[0][0];

@@ -10,7 +10,7 @@ package programming.level2;
  **/
 
 
-public class Problem70 {
+public class CountPalindromicSubstrings {
 
 
     public static void main(String[] args) {

@@ -8,7 +8,7 @@ package programming.level2;
  *
  **/
 
-public class Problem71 {
+public class LongestPalindromicSubstring {
 
     public static void main(String[] args) {
         System.out.print(getLongestPalindrome("abccbc"));

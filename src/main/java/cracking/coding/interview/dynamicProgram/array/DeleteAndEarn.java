@@ -5,6 +5,10 @@ package cracking.coding.interview.dynamicProgram.array;
  *
  * https://leetcode.com/problems/delete-and-earn/
  *
+ *
+ * MaxNonAdjacentSum : Type 2, very similar :
+ * 2022
+ *
  */
 public class DeleteAndEarn {
 

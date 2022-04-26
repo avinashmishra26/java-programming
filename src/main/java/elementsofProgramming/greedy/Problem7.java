@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by avinashkumarmishra on 03/10/21.
  * COMPUTE THE MAXIMUM WATER TRAPPED BY A PAIR OF VERTICAL LINES
- *
+ * 2022
  */
 public class Problem7 {
 
