@@ -11,6 +11,7 @@ package elementsofProgramming.dynamicProgramming;
  * Determine the maximum possible amount of money we can definitely win if we move first.
  * Note: The opponent is as clever as the user.
  *
+ * 2022
  */
 public class problem9 {
 

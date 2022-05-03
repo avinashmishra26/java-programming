@@ -6,6 +6,8 @@ import util.PopulateTreeData;
 /**
  * Created by avinashkumarmishra on 26/09/21.
  * Test if a binary tree satisfies the BST property
+ *
+ * 2022
  */
 public class Problem1 {
 

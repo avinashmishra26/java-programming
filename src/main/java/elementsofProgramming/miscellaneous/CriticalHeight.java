@@ -18,7 +18,9 @@ package elementsofProgramming.miscellaneous;
 public class CriticalHeight {
 
     public static void main(String[] args) {
-        System.out.print(getCriticalHeight(3, 7));
+        System.out.println(getCriticalHeight(3, 7));
+
+        System.out.print(getCriticalHeight(2, 6));
 
     }
 
